@@ -1,0 +1,21 @@
+# Vorlage (Auftrag 8). Installation durch Emre:
+#   mkdir -p ~/.config/systemd/user
+#   cp assistent-remote-control.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now assistent-remote-control
+# Voraussetzung: start-remote-control.sh lief einmal von Hand erfolgreich.
+[Unit]
+Description=Claude Remote Control (Emres Assistent)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/assistent
+ExecStart=%h/assistent/start-remote-control.sh
+Restart=on-failure
+RestartSec=30
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+
+[Install]
+WantedBy=default.target

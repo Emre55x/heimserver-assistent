@@ -1,0 +1,7 @@
+[Unit]
+Description=Emres Assistent: Wächter (Prüfung, Meldung per Telegram)
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/assistent
+ExecStart=/usr/bin/python3 %h/assistent/bruecken/waechter/waechter.py

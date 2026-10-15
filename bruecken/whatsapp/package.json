@@ -1,0 +1,19 @@
+{
+  "name": "assistent-whatsapp",
+  "private": true,
+  "type": "module",
+  "description": "WhatsApp-Brücke (inoffiziell, verknüpftes Gerät) für Emres Assistenten",
+  "scripts": {
+    "start": "node wa.js",
+    "login": "node wa.js --login",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "7.0.0-rc14",
+    "pino": "^9.0.0",
+    "qrcode-terminal": "^0.12.0"
+  }
+}

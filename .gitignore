@@ -1,0 +1,12 @@
+.env
+*.session
+bruecken/**/auth/
+bruecken/**/node_modules/
+logs/
+archiv/
+__pycache__/
+state/
+kontakte.local.md
+kunden/
+.env.*
+!.env.example

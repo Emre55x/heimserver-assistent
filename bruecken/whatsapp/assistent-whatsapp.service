@@ -1,0 +1,17 @@
+# Systemd-Benutzerdienst. Wird von setup-whatsapp.sh mit den richtigen Pfaden installiert.
+[Unit]
+Description=Emres Assistent: WhatsApp-Brücke
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/assistent/bruecken/whatsapp
+ExecStart=/usr/bin/node %h/assistent/bruecken/whatsapp/wa.js
+Restart=on-failure
+RestartSec=15
+# Exit 2 = bei WhatsApp abgemeldet: nicht endlos neu starten, neu verknüpfen
+RestartPreventExitStatus=2
+
+[Install]
+WantedBy=default.target
